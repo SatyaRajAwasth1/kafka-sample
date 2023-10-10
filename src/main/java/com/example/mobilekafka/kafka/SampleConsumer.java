@@ -31,4 +31,10 @@ public class SampleConsumer {
         System.out.println("Saved: "+sampleService.saveMessage(new SampleEntity(data)));
     }
 
+    @KafkaListener(topics = "test1")
+    public void consumeMessageFromTopicTest1(String data){
+        log.info("consuming message: "+data);
+        System.out.println("Saved: "+sampleService.saveMessage(new SampleEntity(data)));
+    }
+
 }

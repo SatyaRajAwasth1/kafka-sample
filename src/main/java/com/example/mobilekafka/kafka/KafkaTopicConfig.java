@@ -20,4 +20,9 @@ public class KafkaTopicConfig {
         return TopicBuilder.name("test").build();
     }
 
+    @Bean
+    public NewTopic sampleTopic2(){
+        return TopicBuilder.name("test1").build();
+    }
+
 }

@@ -24,16 +24,22 @@ public class SampleConsumer {
         this.sampleService = sampleService;
     }
 
-    @KafkaListener(topics = "test")
+    @KafkaListener(topics = "topic1")
 //    Mention groupId too if multiple groups
     public void consumeMessage(String data){
-        log.info("consuming message: "+data);
+        log.info("consuming message from topic topic1: "+data);
         System.out.println("Saved: "+sampleService.saveMessage(new SampleEntity(data)));
     }
 
-    @KafkaListener(topics = "test1")
-    public void consumeMessageFromTopicTest1(String data){
-        log.info("consuming message: "+data);
+    @KafkaListener(topics = "topic2")
+    public void consumeMessageFromTopic1(String data){
+        log.info("consuming message from topic topic2: "+data);
+        System.out.println("Saved: "+sampleService.saveMessage(new SampleEntity(data)));
+    }
+
+    @KafkaListener(topics = "topic3")
+    public void consumeMessageFromTopic3(String data){
+        log.info("consuming message from topic topic3: "+data);
         System.out.println("Saved: "+sampleService.saveMessage(new SampleEntity(data)));
     }
 

@@ -17,12 +17,17 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic sampleTopic1(){
-        return TopicBuilder.name("test").build();
+        return TopicBuilder.name("topic1").build();
     }
 
     @Bean
     public NewTopic sampleTopic2(){
-        return TopicBuilder.name("test1").build();
+        return TopicBuilder.name("topic2").build();
+    }
+
+    @Bean
+    public NewTopic sampleTopic3(){
+        return TopicBuilder.name("topic3").build();
     }
 
 }

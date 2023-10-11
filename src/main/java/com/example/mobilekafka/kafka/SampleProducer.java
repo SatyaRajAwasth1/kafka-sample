@@ -25,7 +25,7 @@ public class SampleProducer {
 
     public String sendMessage(String message){
         log.info("Sending message: {}", message);
-        kafkaTemplate.send("test1",message);
+        kafkaTemplate.send("topic1",message);
         return message;
     }
 
